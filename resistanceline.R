@@ -8,7 +8,8 @@ library(dplyr)
 
 # import data dari excell terlebih dahulu,
 # nama data tergantung nama file
-# Membaca data
+
+# setelah berhasil import data, lanjut step berikutnya 
 
 
 # Membuat plot dengan ggplot2 dan menambahkan garis regresi
