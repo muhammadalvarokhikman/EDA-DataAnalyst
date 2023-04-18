@@ -1,21 +1,14 @@
-# Install packages ggplot dan dplyr jika belum terinstall
-# install.packages("ggplot2")
-# install.packages("dplyr")
+# Membaca data 
+berat_badan <- c(50, 65, 70, 75, 80, 85, 90, 95, 100)
+tinggi_badan <- c(150, 160, 165, 170, 175, 180, 185, 190, 195)
 
-# Memuat packages
-library(ggplot2)
-library(dplyr)
-
-# import data dari excell terlebih dahulu,
-# nama data tergantung nama file
-
-# setelah berhasil import data, lanjut step berikutnya 
-
-
-# Membuat plot dengan ggplot2 dan menambahkan garis regresi
-ggplot(students_score, aes(x = students_score$Hours, y = students_score$Scores)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE)
+# Menghitung koefisien regresi
+regression <- lm(tinggi_badan ~ berat_badan)
 
 # Menampilkan koefisien regresi
-summary(lm(students_score$Hours~students_score$Scores, data = students_score))
+summary(regression)
+
+# Membuat plot beserta resistance line
+plot(berat_badan, tinggi_badan, main = "Hubungan Berat dan Tinggi Badan",
+     xlab = "Berat Badan (kg)", ylab = "Tinggi Badan (cm)")
+abline(regression)
